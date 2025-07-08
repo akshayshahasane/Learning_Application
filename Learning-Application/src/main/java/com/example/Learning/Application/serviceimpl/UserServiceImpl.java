@@ -1,5 +1,6 @@
 package com.example.Learning.Application.serviceimpl;
 
+import com.example.Learning.Application.dto.UserDto;
 import com.example.Learning.Application.entity.User;
 import com.example.Learning.Application.repository.UserRepository;
 import com.example.Learning.Application.service.UserService;
@@ -11,7 +12,6 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
     private final UserRepository userRepository;
 
     public UserServiceImpl(UserRepository userRepository) {
@@ -19,7 +19,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User createUser(User user) {
+    public User createUser(UserDto dto) {
+        User user = User.builder()
+                .name(dto.getName())
+                .email(dto.getEmail())
+                .password(dto.getPassword())
+                .role(dto.getRole())
+                .build();
+
         return userRepository.save(user);
     }
 
