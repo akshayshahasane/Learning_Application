@@ -7,7 +7,7 @@ import com.example.Learning.Application.exception.ResourceNotFoundException;
 import com.example.Learning.Application.repository.CourseRepository;
 import com.example.Learning.Application.repository.UserRepository;
 import com.example.Learning.Application.service.CourseService;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +17,6 @@ public class CourseServiceImpl implements CourseService {
 
 
     private final CourseRepository courseRepo;
-
     private final UserRepository userRepo;
 
     public CourseServiceImpl(CourseRepository courseRepo, UserRepository userRepo) {

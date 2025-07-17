@@ -1,15 +1,19 @@
 package com.example.Learning.Application.serviceimpl;
 
+
 import com.example.Learning.Application.dto.UserDto;
 import com.example.Learning.Application.entity.User;
+
 import com.example.Learning.Application.exception.ResourceAlreadyExistsException;
 import com.example.Learning.Application.repository.UserRepository;
 import com.example.Learning.Application.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -46,5 +50,6 @@ public class UserServiceImpl implements UserService {
     public Optional<User> findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
+
 
 }

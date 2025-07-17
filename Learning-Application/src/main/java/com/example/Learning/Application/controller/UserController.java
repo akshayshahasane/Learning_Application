@@ -1,11 +1,11 @@
 package com.example.Learning.Application.controller;
 
+
 import com.example.Learning.Application.dto.LoginRequest;
 import com.example.Learning.Application.dto.UserDto;
 import com.example.Learning.Application.entity.User;
 import com.example.Learning.Application.service.UserService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,9 +17,7 @@ import java.util.Optional;
 @RequestMapping("/users")
 public class UserController {
 
-    @Autowired
     private final UserService userService;
-
     public UserController(UserService userService) {
         this.userService = userService;
     }
